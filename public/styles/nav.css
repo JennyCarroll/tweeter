@@ -1,0 +1,21 @@
+.logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: xx-large;
+}
+
+.prompt {
+float: right;
+text-align: center;
+}
+
+nav {
+  height: 120px;
+  width: 100vw;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  padding: 1.5em;
+}
+
+.fa-angles-down {
+  color: red;
+}
