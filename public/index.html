@@ -16,8 +16,16 @@
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
 
+  <!-- External Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,7 +38,18 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="logo">tweeter</span>
+    <span class="prompt"><strong>Write</strong> a new tweet <br> <i class="fa-solid fa-angles-down"></i></span>
   </nav>
+
+  <!-- Header with avatar and name -->
+  <header>
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <div>
+      <p><strong>Jenny</strong> Carroll</p>
+    </div>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container"></main>

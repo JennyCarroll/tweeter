@@ -14,6 +14,8 @@ nav {
   background-color: #4056a1;
   color: #FFFFFF;
   padding: 1.5em;
+  position: fixed;
+  top: 0
 }
 
 .fa-angles-down {

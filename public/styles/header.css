@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  background-color: #d99c29;
+  background-image: url("/images/45-degree-fabric-light.png");
+}
+
+header div p {
+  font-size: 1.5em;
+  color: white
+}
