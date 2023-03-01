@@ -58,4 +58,27 @@ $(document).ready(function () {
   };
   //first function call when the DOM loads
   renderTweets(data);
+
+  //handler function submit form data and display new tweet using jQuery so that the page doesn't need to refresh
+  const createTweetWithAJAX = function (event) {
+    // prevent default behaviour of submit event (data submission and page refresh)
+    event.preventDefault();
+    //wrap jquery around the form (event.target) to call .serialize on it,
+    // allowing us to turns a set of form data into a query string
+    const data = $(event.target).serialize();
+    // create AJAX POST request that sends to the server the encoded data string
+    $.ajax({
+      url: "/tweets",
+      data: data,
+      type: "post",
+      //success will run when we get back a succesful http response (200)
+      success: (data) => {
+        console.log("post request was successful", data);
+        // renderTweets(data);
+      },
+    });
+  };
+  //second function call after dom loads, on submit
+  // add event listenter for submit and call createTweetWithAJAX
+  $("form").on("submit", createTweetWithAJAX);
 });
