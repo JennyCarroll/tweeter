@@ -43,7 +43,7 @@ const createTweetElement = function (tweetObj) {
     <i class="fa-solid fa-retweet"></i>
     <i class="fa-sharp fa-solid fa-heart"></i>
   </footer>
-</article>`);
+</article><br>`);
   return $tweet;
 };
 
