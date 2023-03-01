@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/form.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -39,7 +40,7 @@
   </nav>
 
   <!-- Header with avatar and name -->
-  <header>
+  <header class="page-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -58,6 +59,21 @@
           <span><output name="counter" class="counter" for="tweet-text">140</output></span>
         </div>
       </form>
+    </section>
+    <section class="tweets">
+      <article class="tweet">
+        <header class="tweets-header">
+          <span class="id"> <img src="/images/herb.png">Herb</span>
+          <span class="handle">@camelCase</span>
+        </header>
+        Try to choose the happy path today
+        <footer>
+          6 days ago
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-sharp fa-solid fa-heart"></i>
+        </footer>
+      </article>
     </section>
   </main>
 

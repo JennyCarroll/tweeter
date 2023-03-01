@@ -1,0 +1,41 @@
+article:hover {
+  box-shadow: 10px 5px 2px 1px rgba(0, 0, 0, 0.2)
+}
+
+article {
+  border: 2px solid black;
+  padding: 1em;
+}
+
+article footer i {
+  float: right;
+  padding: 0.5%;
+  color: #4c5494;
+}
+
+article footer i:hover {
+  color: #d99c29;
+}
+
+article footer {
+  border-bottom: 0;
+  border-top: 3px solid black;
+  border-right: 0;
+  border-left: 0;
+  font-size: large;
+}
+
+.handle {
+  color: #ccd4e4;
+}
+
+.tweets-header {
+display: flex;
+text-align:center;
+justify-content:space-between
+}
+
+.id {
+  display:flex;
+  align-items: center;
+}
