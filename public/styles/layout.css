@@ -6,6 +6,12 @@
 html {
   box-sizing: border-box;
 }
+
+/* border-sizeing: border-box //includes border and padding (preferred)
+content-box content is 300px */
+/* line-height: 150px gives your characters more room?
+display: inline-block  change a div to this to make them align in a row rather than a colum */
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -26,6 +32,15 @@ body {
 .container {
   background-color: #f4f1ec;
   width: 90%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
+@media (min-width:1000px) {
+  body {
+    margin-top: 90px;
+    display: flex;
+  }
+  header, main {
+    padding: 3em;
+  }
+}

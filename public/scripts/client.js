@@ -76,9 +76,10 @@ const createTweetWithAJAX = function (event) {
 const createTweetElement = function (tweetObj) {
   const $tweet = $(`<article class="tweet">
   <header class="tweets-header">
-    <span class="id"> <img src=${tweetObj.user.avatars}>${
-    tweetObj.user.name
-  }</span>
+    <span class="id"> 
+      <img src=${tweetObj.user.avatars}>
+      ${tweetObj.user.name}
+    </span>
     <span class="handle">${tweetObj.user.handle}</span>
   </header>
   ${escape(tweetObj.content.text)}

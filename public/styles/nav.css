@@ -10,11 +10,11 @@ text-align: center;
 
 nav {
   height: 120px;
-  width: 100vw;
-  background-color: #4056a1;
+  width: 100%;
+  padding: 1em;
+  background-color: #d99c29;
+  background-image: url("/images/45-degree-fabric-light.png");
   color: #FFFFFF;
-  padding: 1.5em;
-  position: fixed;
   top: 0
 }
 
@@ -24,4 +24,21 @@ nav {
 
 .strong {
   font-weight: bold;
+}
+
+@media (max-width:500px) {
+  nav {
+    padding: 0.5em;
+    top: 0
+  }
+}
+
+@media (min-width:1000px) {
+  nav {
+    background-color: #4056a1;
+    padding: 1.5em;
+    position: fixed;
+    background-image: none;
+    top: 0
+  }
 }

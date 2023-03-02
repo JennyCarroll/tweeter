@@ -3,6 +3,11 @@
 
 <head>
   <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </meta>
+  <!-- Disable viewport zooming -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
@@ -57,7 +62,7 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <form action="/tweets" method="post">
+      <form>
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div>
           <span><button type="submit">Tweet</button></span>
