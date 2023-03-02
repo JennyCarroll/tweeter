@@ -37,6 +37,14 @@ $(document).ready(function () {
   const createTweetWithAJAX = function (event) {
     // prevent default behaviour of submit event (data submission and page refresh)
     event.preventDefault();
+    // disallow form submission if tweet area is empty or exceeds 140 character limit
+    const textAreaContent = $("#tweet-text").val();
+    if (textAreaContent === "") {
+      return alert("Tweet not present!  Please write tweet.");
+    }
+    if (textAreaContent.length > 140) {
+      return alert("Content too long! Be more concise");
+    }
     //wrap jquery around the form to call .serialize on it, allowing us to turns a set of form data into a query string
     const data = $(event.target).serialize();
     // create AJAX POST request that sends to the server the encoded data string
