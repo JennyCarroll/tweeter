@@ -10,11 +10,11 @@ Tweeter is a single-page Twitter clone! This project was created by me using jQu
 
 ### Tablet
 
-![screenshot of app on tablet](https://github.com/JennyCarroll/tweeter/blob/main/docs/tablet.png?raw=true)
+![screenshot of app on tablet](https://github.com/JennyCarroll/tweeter/blob/main/docs/tablet2.png?raw=true)
 
 ### Phone
 
-![screenshot of app on phone](https://github.com/JennyCarroll/tweeter/blob/main/docs/tablet2.png?raw=true)
+![screenshot of app on phone](https://github.com/JennyCarroll/tweeter/blob/main/docs/phone.png?raw=true)
 
 ## Dependencies
 
