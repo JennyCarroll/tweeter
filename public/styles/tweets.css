@@ -1,12 +1,16 @@
-article:hover {
-  box-shadow: 10px 5px 2px 1px rgba(0, 0, 0, 0.2)
-}
+/* styles for rendered tweets */
 
+/* for entire tweet container */
 article {
   border: 2px solid black;
   padding: 1em;
 }
 
+article:hover {
+  box-shadow: 10px 5px 2px 1px rgba(0, 0, 0, 0.2)
+}
+
+/* for footer */
 article footer i {
   float: right;
   padding: 0.5%;
@@ -25,21 +29,25 @@ article footer {
   font-size: large;
 }
 
+/* for handle */
 .handle {
   color: #ccd4e4;
 }
 
+/* for entire header */
 .tweets-header {
 display: flex;
 text-align:center;
 justify-content:space-between;
 }
 
+/* for image and name */
 .id {
   display:flex;
   align-items: center;
 }
 
+/* large screen breakpoint */
 @media (min-width:1000px) {
   .tweet {
     width: 40vw;
@@ -53,6 +61,3 @@ justify-content:space-between;
     margin-right: 8%;
   }
 }
-
-
-/* section called tweets with class of tweet */

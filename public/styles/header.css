@@ -1,3 +1,10 @@
+/* style name in header */
+header div p {
+  font-size: 1.5em;
+  color: white
+}
+
+/* style page header */
 .page-header {
   display: flex;
   justify-content: center;
@@ -8,11 +15,7 @@
   background-image: url("/images/45-degree-fabric-light.png");
 }
 
-header div p {
-  font-size: 1.5em;
-  color: white
-}
-
+/* large screen breakpoint */
 @media (min-width:1000px) {
   .page-header {
     margin-left: 8%;

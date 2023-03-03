@@ -1,6 +1,4 @@
-/*
- * Client-side JS logic
- */
+//  * Client-side JS logic
 
 //a function to escape some text
 const escape = function (str) {
@@ -9,7 +7,7 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-//a function that takes in an array of tweet objects and prepends the new tweet element in the tweets section of index.html
+//function - takes in array of tweet objects, prepends new tweet element in tweets section of index.html
 const renderTweets = function (arrOfTweetObjs) {
   for (const obj of arrOfTweetObjs) {
     //leverage createTweetElement function by passing in the tweet object
@@ -19,7 +17,7 @@ const renderTweets = function (arrOfTweetObjs) {
   }
 };
 
-//a function for fetching a list of tweets from the database (backend)
+//function - retrieves a list of tweets from the database (backend)
 const loadTweets = function () {
   //use jQuery to make a request to /tweets and receive an array of tweets as JSON
   $.ajax({
@@ -33,12 +31,11 @@ const loadTweets = function () {
   });
 };
 
-/* this handler function submits form input data and displays a new tweet using jQuery
- ** so that the page doesn't need to refresh*/
+//handler function - submits form input data, displays a new tweet using jQuery
 const createTweetWithAJAX = function (event) {
-  // prevent default behaviour of submit event (data submission and page refresh)
+  // prevent default behaviour of submit event
   event.preventDefault();
-  // disallow form submission if tweet area is empty or exceeds 140 character limit
+  // validation check that disallows form submission if tweet area is empty or exceeds 140 characters
   const textAreaContent = $("#tweet-text").val();
   $(".error").slideUp(400, () => {
     if (textAreaContent === "") {
@@ -56,23 +53,19 @@ const createTweetWithAJAX = function (event) {
   $.ajax({
     url: "/tweets",
     data: data,
-    type: "application/json", //telling ajax what to turn the encoded string into
+    type: "application/json",
     method: "post",
     success: (data) => {
-      //will run when we get back a succesful http response (200) meaning the data succesfully got to the server
-      //extra stuff that could happen after we get a succesful response from the server
       //clear the textarea by assigning its value to an empty string
       $("textarea").val("");
-      //new get request to get the last item and pass it to renderTweets which will prepend it to the tweets
-      // $.ajax("/tweets", { method: "GET" }).then((arrOfTweets) => {
-      //   renderTweets(arrOfTweets.slice(-1));
-      // });
+      //call load tweets to render the new tweet, prepending it to the tweets container
       loadTweets();
     },
   });
 };
 
-//takes in tweet object and returns $tweet container holding jQuery string html article element populated with object data
+// function - takes in tweet object and returns $tweet container holding jQuery string
+// html article element populated with object data
 const createTweetElement = function (tweetObj) {
   const $tweet = $(`<article class="tweet">
   <header class="tweets-header">
@@ -93,10 +86,15 @@ const createTweetElement = function (tweetObj) {
   return $tweet;
 };
 
-//runs whem the dom is loaded
+//runs when the dom is loaded
 $(document).ready(function () {
-  // add event listener for submit and call createTweetWithAJAX
+  //event listener for submit and call createTweetWithAJAX
   $("form").on("submit", createTweetWithAJAX);
+
+  //event listener for click on nav bar button
+  $(".arrows").on("click", function () {
+    $("#tweet-text").focus();
+  });
 
   //first function call after the dom loads
   loadTweets();

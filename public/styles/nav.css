@@ -1,13 +1,10 @@
+/* style tweeter logo */
 .logo {
   font-family: 'Bungee', sans-serif;
   font-size: xx-large;
 }
 
-.prompt {
-float: right;
-text-align: center;
-}
-
+/* style nav bar */
 nav {
   height: 120px;
   width: 100%;
@@ -18,14 +15,46 @@ nav {
   top: 0
 }
 
+/* style and animate arrows */
+.arrows {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.bounce { 
+  position: relative; 
+  animation: bounce 5s 10 linear;
+  webkit-animation: bounce 5s 10 linear; 
+  moz-animation: bounce 5s 10 linear;
+
+}
+
+@keyframes bounce { 0%, 100% { top: 0; } 30% { top: 20px; } 50% { top: 10px; } 80% { top: 20px; } }
+@-webkit-keyframes bounce { 0%, 100% { top: 0; } 30% { top: 20px; } 50% { top: 10px; } 80% { top: 20px; } }
+@-moz-keyframes bounce { 0%, 100% { top: 0; } 30% { top: 20px; } 50% { top: 10px; } 80% { top: 20px; } }
+
+/* style prompt */
+.prompt {
+float: right;
+text-align: center;
+}
+
+/* define red class */
 .red {
   color: red;
 }
 
+/* define strong class */
 .strong {
   font-weight: bold;
 }
 
+/* breakpoint for phones */
 @media (max-width:500px) {
   nav {
     padding: 0.5em;
@@ -33,6 +62,7 @@ nav {
   }
 }
 
+/* large screen breakpoint */
 @media (min-width:1000px) {
   nav {
     background-color: #4056a1;

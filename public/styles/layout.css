@@ -1,27 +1,12 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+/* change default from content-box so padding and border are included in the size of the element*/
 html {
   box-sizing: border-box;
 }
-
-/* border-sizeing: border-box //includes border and padding (preferred)
-content-box content is 300px */
-/* line-height: 150px gives your characters more room?
-display: inline-block  change a div to this to make them align in a row rather than a colum */
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
- /* Additional CSS can be defined below or in other CSS files, as per instructions */
-
+/* style body */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -29,12 +14,14 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* style main */
 .container {
   background-color: #f4f1ec;
   width: 90%;
   /* margin: 0 auto; */
 }
 
+/* large screen breakpoint */
 @media (min-width:1000px) {
   body {
     margin-top: 90px;
