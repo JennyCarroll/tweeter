@@ -4,6 +4,7 @@
 article {
   border: 2px solid black;
   padding: 1em;
+  overflow-wrap: break-word;
 }
 
 article:hover {

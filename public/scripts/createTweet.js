@@ -3,7 +3,9 @@ const createTweetWithAJAX = function (event) {
   // prevent default behaviour of submit event
   event.preventDefault();
   // validation check that disallows form submission if tweet area is empty or exceeds 140 characters
-  const textAreaContent = $("#tweet-text").val();
+  // const textAreaContent = $("#tweet-text").val();
+  const textAreaContent = event.target[0].value;
+  console.log("textAreaContent:", textAreaContent);
   $(".error").slideUp(400, () => {
     if (textAreaContent === "") {
       $(".error").html("Tweet not present!  Please write tweet.").slideDown();
@@ -22,11 +24,17 @@ const createTweetWithAJAX = function (event) {
     data: data,
     type: "application/json",
     method: "post",
-    success: (data) => {
+    success: () => {
       //clear the textarea by assigning its value to an empty string
       $("textarea").val("");
+      //reset the counter to 140 characters
+      charCountReset();
       //call load tweets to render the new tweet, prepending it to the tweets container
-      loadTweets();
+      // loadTweets();
+      $.ajax("/tweets", { method: "GET" }).then((arrOfTweets) => {
+        const tweet = createTweetElement(arrOfTweets.slice(-1)[0]);
+        $(".tweets").prepend(tweet);
+      });
     },
   });
 };
