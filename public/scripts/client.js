@@ -10,6 +10,11 @@ $(document).ready(function () {
     $("#tweet-text").focus();
   });
 
+  //slide the error back up on click
+  $("#tweet-text").on("click", function () {
+    $(".error").slideUp(400, () => {});
+  });
+
   //first function call after the dom loads
   loadTweets();
 });

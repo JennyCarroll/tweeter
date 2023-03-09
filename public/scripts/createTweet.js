@@ -5,17 +5,16 @@ const createTweetWithAJAX = function (event) {
   // validation check that disallows form submission if tweet area is empty or exceeds 140 characters
   // const textAreaContent = $("#tweet-text").val();
   const textAreaContent = event.target[0].value;
-  console.log("textAreaContent:", textAreaContent);
-  $(".error").slideUp(400, () => {
-    if (textAreaContent === "") {
-      $(".error").html("Tweet not present!  Please write tweet.").slideDown();
-      return;
-    }
-    if (textAreaContent.length > 140) {
-      $(".error").html("Content too long! Be more concise.").slideDown();
-      return;
-    }
-  });
+
+  if (textAreaContent === "") {
+    $(".error").html("Tweet not present!  Please write tweet.").slideDown();
+    return;
+  }
+  if (textAreaContent.length > 140) {
+    $(".error").html("Content too long! Be more concise.").slideDown();
+    return;
+  }
+
   //wrap jquery around the form to call .serialize on it, turning a set of form data into a query string
   const data = $(event.target).serialize();
   // create AJAX POST request that sends to the server the encoded data string
@@ -29,12 +28,15 @@ const createTweetWithAJAX = function (event) {
       $("textarea").val("");
       //reset the counter to 140 characters
       charCountReset();
-      //call load tweets to render the new tweet, prepending it to the tweets container
-      // loadTweets();
+      //prepend new tweet to the tweets container
       $.ajax("/tweets", { method: "GET" }).then((arrOfTweets) => {
         const tweet = createTweetElement(arrOfTweets.slice(-1)[0]);
         $(".tweets").prepend(tweet);
       });
+    },
+    //catches error from backend "/tweets/"
+    error: function (request, status, error) {
+      $(".error").html("Something wrong in the server!").slideDown();
     },
   });
 };
